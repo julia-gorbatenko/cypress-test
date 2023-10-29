@@ -1,4 +1,4 @@
-import posts from "../../../fixtures/api/posts/posts.json"
+import post from "../../../fixtures/api/posts/post.json"
 
 describe("Posts", ()=>{
   it('should return post by id',() => {
@@ -11,7 +11,7 @@ describe("Posts", ()=>{
     cy.get("@getPost").its("status")
       .should("equal", 200)
     cy.get("@getPost").then((req)=>{
-    cy.wrap(req).its("body").should("deep.include", posts)
+    cy.wrap(req).its("body").should("deep.include", post)
   })
 })
 })
